@@ -1,6 +1,9 @@
 import styles from "@/components/directors.module.css";
 export default function Directors(props)
 {
+    if (!props.details || props.details.length === 0 ||!props.moviesDirected || props.moviesDirected.length === 0) {
+        return;
+    }
     const directedMovies = [];
     for(let i in props.moviesDirected)
     {
