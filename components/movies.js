@@ -1,6 +1,9 @@
 import styles from "@/components/movies.module.css";
 export default function MoviesDisplay(props)
 {
+    if (!props.details || props.details.length === 0 ) {
+        return;
+    }
     return (<div className = {styles.display}>
         Movies 
         <div>
