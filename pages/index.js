@@ -9,20 +9,12 @@ export async function getStaticProps()
     const fileData = fs.readFileSync(filePath);
     const dataa = JSON.parse(fileData);  
 
-    if(!dataa)
-        {
-          return{
-            redirect:{
-              destination:'/no-data'
-            }
-          }
-        }
-        if(dataa.movies.length===0)
-        {
-          return {
-            notFound:true
-          }
-        }
+    if(!dataa || dataa.movies.length===0)
+    {
+      return {
+        notFound:true
+      }
+    }
 
     return {
         props:{
