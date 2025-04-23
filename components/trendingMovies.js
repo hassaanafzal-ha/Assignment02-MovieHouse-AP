@@ -1,7 +1,9 @@
 import styles from "@/components/trendingMovies.module.css";
 export default function TrendingMovies(props)
 {
-
+    if (!props.movies || props.movies.length === 0 ) {
+        return;
+    }
     return (<div className = {styles.display}>
         Trending Movies 
         <div>
