@@ -1,6 +1,9 @@
 import styles from "@/components/genres.module.css";
 export default function GenreDetails(props)
 {
+    if (!props.details || props.details.length === 0 ) {
+        return;
+    }
      return (<div className = {styles.display}>
         Genres 
         <div>
