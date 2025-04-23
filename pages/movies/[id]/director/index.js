@@ -7,6 +7,12 @@ export async function getStaticPaths()
     const filePath = path.join(process.cwd(),'data','data.json');
     const fileData = fs.readFileSync(filePath);
     const dataa = JSON.parse(fileData); 
+
+    if (!dataa || dataa.movies.length === 0) {
+        return {
+            notFound: true,
+        };
+    }
     const dataInArr = [];
     for(let i in dataa)
     {
@@ -14,6 +20,11 @@ export async function getStaticPaths()
     }
     const selectedData = dataInArr.map((val)=>{return {params:{id: val.id.toString()}}});
 
+    if (!selectedData) {
+        return {
+            notFound: true,
+        };
+    }
     return{
         paths:selectedData,
         fallback:false
