@@ -1,0 +1,11 @@
+.home{
+    background-color: purple;
+    display:grid;
+    padding: 100px;
+    margin: 20px 20px;
+}
+.button{
+    padding: 20px;
+    display: inline;
+    border-radius: 5px;
+}

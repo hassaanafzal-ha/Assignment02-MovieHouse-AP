@@ -1,0 +1,14 @@
+.display{
+    background-color: violet;
+    color:aliceblue;
+    font-size: larger;
+    text-align: center;
+} 
+.movies{
+    background-color: purple;
+    display:grid;
+    padding: 50px;
+    margin: 20px 20px;
+    color:yellow;
+    text-align: center;
+}
